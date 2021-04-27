@@ -3,6 +3,7 @@ function resolve(dir) {
   return path.join(__dirname, dir); //设置绝对路径
 }
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production' ? '/WhiteSharkUI-Vue/' : '/',
   devServer: {
     overlay: {
       warnings: false, //不显示警告
