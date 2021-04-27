@@ -12,7 +12,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "../assets/styles/mixin.scss";
+  @import "@assets/styles/mixin.scss";
 .code{
   display: block;
   padding-left: px2rem(50);

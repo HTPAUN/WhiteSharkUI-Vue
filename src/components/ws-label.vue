@@ -55,7 +55,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "../assets/styles/mixin";
+  @import "@assets/styles/mixin";
 
   .ws-label {
     width: px2rem(500);

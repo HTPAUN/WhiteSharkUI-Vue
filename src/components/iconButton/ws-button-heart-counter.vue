@@ -17,8 +17,8 @@
 </template>
 
 <script>
-  import '../../assets/icon/iconfont'
-  import '../../assets/icon/iconfont.css'
+  import '@assets/icon/iconfont'
+  import '@assets/icon/iconfont.css'
   export default {
     data() {
       return {
@@ -43,7 +43,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "../../assets/styles/mixin";
+  @import "@assets/styles/mixin";
   .iconButton-heartCounter{
     width: px2rem(220);
     height: px2rem(100);

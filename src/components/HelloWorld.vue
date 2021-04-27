@@ -4,7 +4,7 @@
     <ws-logo></ws-logo>
     <div><p class="logo">------------------ 大白鲨UI ------------------</p></div>
     <div class="page">
-      <p class="titleA">开发指南</p>
+      <!-- <p class="titleA">开发指南</p>
       <ws-part>
         <p class="titleB">NPM安装</p>
         <p class="detail">推荐使用npm的方式安装，它能更好地与Webpack打包工具一同配合使用。</p>
@@ -12,7 +12,7 @@
         <p class="titleB">快速上手</p>
         <p class="detail">您可以在main.js中引入整个大白鲨UI。</p>
         <ws-code><template><p class="detail">zhegeyemeiyouyanjiuhaozenmenong</p></template></ws-code>
-      </ws-part>
+      </ws-part> -->
       <p class="titleA">组件介绍</p>
       <ws-part>
         <p class="titleB">按钮Button</p>
@@ -136,105 +136,27 @@
 
 </template>
 
-
-<style lang="scss">
-  @import "../assets/font/font.css";
-  @import "../assets/styles/mixin";
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-  }
-  #nav {
-    padding: 30px;
-    a {
-      font-weight: bold;
-      color: #2c3e50;
-      &.router-link-exact-active {
-        color: #42b983;
-      }
-    }
-  }
-  .logo{
-    font-family: "hanyi",serif;
-    font-size: px2rem(150);
-    margin: 0;
-  }
-
-  .page{
-
-    background-color: transparent;
-    margin-top: px2rem(100);
-    margin-right: px2rem(300);
-    margin-left: px2rem(300);
-    padding-top: px2rem(100);
-  }
-
-
-  .titleA{
-    margin: 0;
-    font-family: "Microsoft YaHei UI",serif;
-    font-size: px2rem(70);
-    text-align: left;
-    padding-left: px2rem(50);
-    padding-bottom: px2rem(80);
-    padding-top: px2rem(100);
-    font-weight: 600;
-  }
-  .titleB{
-    margin: 0;
-    font-family: "Microsoft YaHei UI",serif;
-    font-size: px2rem(50);
-    text-align: left;
-    padding-left: px2rem(50);
-    padding-bottom: px2rem(10);
-    font-weight: 500;
-  }
-
-  .titleC{
-    margin-top: px2rem(100);
-    font-family: "hanyi",serif;
-    font-size: px2rem(60);
-    text-align: left;
-    padding-left: px2rem(50);
-    padding-bottom: px2rem(10);
-    font-weight: 500;
-    color: #4e4e4e;
-  }
-
-  .detail{
-    margin: 0;
-    font-family: "Microsoft YaHei UI",serif;
-    font-size: px2rem(35);
-    text-align: left;
-    padding-left: px2rem(50);
-  }
-
-
-</style>
 <script>
-  import wsButtonThumbsUp from "../components/iconButton/ws-button-thumsUp"
-  import wsButtonStar from "../components/iconButton/ws-button-star"
-  import wsButtonHeart from "../components/iconButton/ws-button-heart"
-  import wsButtonStarCounter from "../components/iconButton/ws-button-star-counter"
-  import wsButtonHeartCounter from "../components/iconButton/ws-button-heart-counter"
-  import wsButtonThumbsUpCounter from "../components/iconButton/ws-button-thumbsUp-counter"
-  import wsButtonDSStar from "../components/iconButton/DynamicScoringButton/ws-button-DS-star"
-  import wsButtonDSHeart from "../components/iconButton/DynamicScoringButton/ws-button-DS-heart"
-  import wsButtonSSStar from "../components/iconButton/StaticScoringButton/ws-button-SS-star"
-  import wsButtonSSHeart from "../components/iconButton/StaticScoringButton/ws-button-SS-heart"
-  import wsButton from "../components/ws-button"
-  import wsInputLine from "../components/ws-input-line"
-  import wsInputFrame from "../components/ws-input-frame"
-  import wsLabel from "../components/ws-label"
-  import wsLogo from "../components/ws-logo"
-  import wsCode from "../components/ws-code"
-  import wsPart from "../components/ws-part"
+  import wsButtonThumbsUp from "@components/iconButton/ws-button-thumsUp"
+  import wsButtonStar from "@components/iconButton/ws-button-star"
+  import wsButtonHeart from "@components/iconButton/ws-button-heart"
+  import wsButtonStarCounter from "@components/iconButton/ws-button-star-counter"
+  import wsButtonHeartCounter from "@components/iconButton/ws-button-heart-counter"
+  import wsButtonThumbsUpCounter from "@components/iconButton/ws-button-thumbsUp-counter"
+  import wsButtonDSStar from "@components/iconButton/DynamicScoringButton/ws-button-DS-star"
+  import wsButtonDSHeart from "@components/iconButton/DynamicScoringButton/ws-button-DS-heart"
+  import wsButtonSSStar from "@components/iconButton/StaticScoringButton/ws-button-SS-star"
+  import wsButtonSSHeart from "@components/iconButton/StaticScoringButton/ws-button-SS-heart"
+  import wsButton from "@components/ws-button"
+  import wsInputLine from "@components/ws-input-line"
+  import wsInputFrame from "@components/ws-input-frame"
+  import wsLabel from "@components/ws-label"
+  import wsLogo from "@components/ws-logo"
+  import wsCode from "@components/ws-code"
+  import wsPart from "@components/ws-part"
 
 
-  import '../assets/font/font.css'
+  import '@assets/font/font.css'
   export default {
     components: {
       wsInputLine,
@@ -348,3 +270,81 @@
   }
 
 </script>
+
+<style lang="scss">
+  @import "~@assets/font/font.css";
+  @import "~@assets/styles/mixin";
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
+  #nav {
+    padding: 30px;
+    a {
+      font-weight: bold;
+      color: #2c3e50;
+      &.router-link-exact-active {
+        color: #42b983;
+      }
+    }
+  }
+  .logo{
+    font-family: "hanyi",serif;
+    font-size: px2rem(150);
+    margin: 0;
+  }
+
+  .page{
+
+    background-color: transparent;
+    margin-top: px2rem(100);
+    margin-right: px2rem(300);
+    margin-left: px2rem(300);
+    padding-top: px2rem(100);
+  }
+
+
+  .titleA{
+    margin: 0;
+    font-family: "Microsoft YaHei UI",serif;
+    font-size: px2rem(70);
+    text-align: left;
+    padding-left: px2rem(50);
+    padding-bottom: px2rem(80);
+    padding-top: px2rem(100);
+    font-weight: 600;
+  }
+  .titleB{
+    margin: 0;
+    font-family: "Microsoft YaHei UI",serif;
+    font-size: px2rem(50);
+    text-align: left;
+    padding-left: px2rem(50);
+    padding-bottom: px2rem(10);
+    font-weight: 500;
+  }
+
+  .titleC{
+    margin-top: px2rem(100);
+    font-family: "hanyi",serif;
+    font-size: px2rem(60);
+    text-align: left;
+    padding-left: px2rem(50);
+    padding-bottom: px2rem(10);
+    font-weight: 500;
+    color: #4e4e4e;
+  }
+
+  .detail{
+    margin: 0;
+    font-family: "Microsoft YaHei UI",serif;
+    font-size: px2rem(35);
+    text-align: left;
+    padding-left: px2rem(50);
+  }
+
+
+</style>

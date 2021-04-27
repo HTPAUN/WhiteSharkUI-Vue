@@ -11,7 +11,7 @@
 </script>
 
 <style scoped lang="scss">
-@import "../assets/styles/mixin";
+@import "@assets/styles/mixin";
   .pageA{
     padding-top: px2rem(100);
     padding-left: px2rem(50);

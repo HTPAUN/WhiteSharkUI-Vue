@@ -6,15 +6,15 @@
 </template>
 
 <script>
-  import '../assets/icon/iconfont'
-  import '../assets/icon/iconfont.css'
+  import '@assets/icon/iconfont'
+  import '@assets/icon/iconfont.css'
   export default {
         name: "ws-logo"
     }
 </script>
 
 <style scoped lang="scss">
-  @import "../assets/styles/mixin.scss";
+  @import "@assets/styles/mixin.scss";
   .icon {
     width: px2rem(800);
     height: px2rem(800);

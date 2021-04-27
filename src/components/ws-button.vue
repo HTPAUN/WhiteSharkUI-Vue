@@ -61,7 +61,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "../assets/styles/mixin";
+  @import "@assets/styles/mixin";
 .ws-button {
   position: relative;
   display: inline-block;

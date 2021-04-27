@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import "../../../assets/icon/iconfont"
+  import "@assets/icon/iconfont"
 
 
   export default {
@@ -52,7 +52,7 @@
 </script>
 
 <style scoped lang="scss" >
-  @import "../../../assets/styles/mixin.scss";
+  @import "@assets/styles/mixin.scss";
   .rating {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     font-size: px2rem(20);
