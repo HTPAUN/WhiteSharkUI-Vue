@@ -13,33 +13,6 @@
 <script>
 export default {
   name: "ws-button",
-  data(){
-      return{
-        show:false,
-        customizeColor: {
-          color:this.color,
-          borderColor:this.borderColor,
-        }
-
-      }
-  },
-  computed:{
-    classNames(){
-      let type = this.type
-      let block = this.block
-      let disabled = this.disabled
-      return {
-        'ws-button-red':type === 'red',
-        'ws-button-green':type === 'green',
-        'ws-button-blue':type === 'blue',
-        'ws-button-yellow':type === 'yellow',
-        'ws-button-purple':type === 'purple',
-        'block': block,
-        'width-100':block,
-        'disabled':disabled
-      }
-    }
-  },
   props:{
     type:{
       type : String,
@@ -60,6 +33,32 @@ export default {
     block: {
         type : Boolean,
         default:false
+    }
+  },
+  data(){
+    return{
+      show:false,
+      customizeColor: {
+        color:this.color,
+        borderColor:this.borderColor,
+      }
+    }
+  },
+  computed:{
+    classNames(){
+      let type = this.type
+      let block = this.block
+      let disabled = this.disabled
+      return {
+        'ws-button-red':type === 'red',
+        'ws-button-green':type === 'green',
+        'ws-button-blue':type === 'blue',
+        'ws-button-yellow':type === 'yellow',
+        'ws-button-purple':type === 'purple',
+        'block': block,
+        'width-100':block,
+        'disabled':disabled
+      }
     }
   },
   methods:{
