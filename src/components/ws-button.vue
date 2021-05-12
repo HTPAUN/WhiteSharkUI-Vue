@@ -1,116 +1,125 @@
 <template>
-    <button :class="{'ws-button-red':type === 'red',
-    'ws-button-green':type === 'green',
-    'ws-button-blue':type === 'blue',
-    'ws-button-yellow':type === 'yellow',
-    'ws-button-purple':type === 'purple',
-    'block': block,
-    'width-100':block,
-    'disabled':disabled
-    }"
-            :disabled="disabled"
-            @click="click"
-            class="ws-button"
-            :style="customizeColor"
+    <button 
+      :class="classNames"
+      :disabled="disabled"
+      @click="click"
+      class="ws-button"
+      :style="customizeColor"
     >
       <slot></slot>
     </button>
 </template>
 
 <script>
-    export default {
-        name: "ws-button",
-      data(){
-          return{
-            show:false,
-            customizeColor: {
-              color:this.color,
-              borderColor:this.borderColor,
-            }
-
-          }
-      },
-      props:{
-          type:{
-            type : String,
-            default : 'default'
-          },
-        disabled: {
-            type : Boolean,
-            default: false
-        },
-        color:{
-            type : String,
-            default: ''
-        },
-        borderColor:{
-            type : String,
-            default: ''
-        },
-        block: {
-            type : Boolean,
-            default:false
+export default {
+  name: "ws-button",
+  data(){
+      return{
+        show:false,
+        customizeColor: {
+          color:this.color,
+          borderColor:this.borderColor,
         }
-      },
-      methods:{
-          click(){
-            this.$emit('click')
-          }
+
+      }
+  },
+  computed:{
+    classNames(){
+      let type = this.type
+      let block = this.block
+      let disabled = this.disabled
+      return {
+        'ws-button-red':type === 'red',
+        'ws-button-green':type === 'green',
+        'ws-button-blue':type === 'blue',
+        'ws-button-yellow':type === 'yellow',
+        'ws-button-purple':type === 'purple',
+        'block': block,
+        'width-100':block,
+        'disabled':disabled
       }
     }
+  },
+  props:{
+    type:{
+      type : String,
+      default : 'default'
+    },
+    disabled: {
+        type : Boolean,
+        default: false
+    },
+    color:{
+        type : String,
+        default: ''
+    },
+    borderColor:{
+        type : String,
+        default: ''
+    },
+    block: {
+        type : Boolean,
+        default:false
+    }
+  },
+  methods:{
+    click(){
+      this.$emit('click')
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">
   @import "@assets/styles/mixin";
-.ws-button {
-  position: relative;
-  display: inline-block;
-  margin: px2rem(15);
-  padding-top: px2rem(5);
-  padding-bottom: px2rem(5);
-  padding-left: px2rem(40);
-  padding-right: px2rem(40);
+  .ws-button {
+    position: relative;
+    display: inline-block;
+    margin: px2rem(15);
+    padding: px2rem(5) px2rem(40);
+    height: px2rem(68);
+    line-height: 1.5;
+    box-sizing: border-box;
 
-  height: px2rem(68);
-  line-height: 1.5;
+    font-weight: 600;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    cursor: pointer;
+    border: 2.5px solid transparent;
 
-  font-weight: 600;
-  white-space: nowrap;
-  text-align: center;
-  background-image: none;
-  cursor: pointer;
-  border: 0px solid transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-
-  font-size: px2rem(35);
-  letter-spacing: px2rem(3);
-  border-radius: 1px;
-  color: rgba(0, 0, 0, 0.65);
-  background-color: #fff;
-  outline: none;
-
-  &:hover,
-  &:focus {
-    color: #1744c2;
+    font-size: px2rem(35);
+    letter-spacing: px2rem(3);
+    border-radius: 1px;
+    color: rgba(0, 0, 0, 0.65);
     background-color: #fff;
-    border-bottom: dashed  #6689ed;
-  }
+    outline: none;
 
-  &.disabled{
-    color: #858585;
     &:hover,
     &:focus {
-      color: #858585;
+      color: #1744c2;
       background-color: #fff;
+      border-bottom: dashed  #6689ed;
+    }
+
+    &.disabled{
+      color: #858585;
+      &:hover,
+      &:focus {
+        color: #858585;
+        background-color: #fff;
+
+        border: 2.5px solid #ebeef5;
+      }
     }
   }
-}
 
   .ws-button-red{
     color: #fff;
@@ -137,7 +146,7 @@
       &:focus {
         color: #fff;
         background-color: #fa8c93;
-        border: none;
+        border-color: #fa8c93;
 
       }
     }
@@ -168,11 +177,10 @@
       &:focus {
         color: #fff;
         background-color: #a6f27a;
-        border:none;
+        border-color: #a6f27a;
       }
     }
   }
-
 
   .ws-button-yellow{
     color: #fff;
@@ -199,11 +207,10 @@
       &:focus {
         color: #fff;
         background-color: #ffe474;
-        border:none;
+        border-color: #ffe474;
       }
     }
   }
-
 
   .ws-button-blue{
     color: #fff;
@@ -230,11 +237,10 @@
       &:focus {
         color: #fff;
         background-color: #86cbef;
-        border:none;
+        border-color: #86cbef;
       }
     }
   }
-
 
   .ws-button-purple{
     color: #fff;
@@ -261,7 +267,7 @@
       &:focus {
         color: #fff;
         background-color: #ab88ec;
-        border:none;
+        border-color: #ab88ec;
       }
     }
   }
@@ -280,6 +286,7 @@
       border-color: #ebeef5;
     }
   }
+  
   .block {
     display: block !important;
   }
