@@ -1,12 +1,5 @@
 <<template>
-  <div :class="{
-    'ws-input-red':type === 'red',
-    'ws-input-blue':type === 'blue' || type === '',
-    'ws-input-yellow':type === 'yellow',
-    'ws-input-purple':type === 'purple',
-    'ws-input-green':type === 'green',}"
-  >
-
+  <div :class="classNames">
     <input
       :disabled="disabled"
       :placeholder="placeholder"
@@ -14,8 +7,8 @@
       :value="value"
       @input="handleInput"
       class="ws-input-inner"
-      ref="input">
-
+      ref="input"
+    >
   </div>
 </template>
 
@@ -56,6 +49,18 @@
     methods:{
       handleInput(event){
         this.$emit('input',event.target.value)
+      }
+    },
+    computed: {
+      classNames(){
+        let type = this.type
+        return {
+          'ws-input-red':type === 'red',
+          'ws-input-blue':type === 'blue' || type === '',
+          'ws-input-yellow':type === 'yellow',
+          'ws-input-purple':type === 'purple',
+          'ws-input-green':type === 'green'
+        }
       }
     }
   }

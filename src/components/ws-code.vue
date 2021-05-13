@@ -1,5 +1,4 @@
 <template>
-
     <div class="code">
       <slot></slot>
     </div>

@@ -1,20 +1,10 @@
 <template>
   <label
-  :class="{
-  'ws-label-red':type === 'red',
-  'ws-label-yellow':type === 'yellow',
-  'ws-label-blue':type === 'blue',
-  'ws-label-green':type === 'green',
-  'ws-label-purple':type === 'purple',
-  'ws-label':type === 'customize',
-  'block': block,
-  'disabled':disabled
-  }"
-
-  :disabled="disabled"
-  :type="type"
-  :style="design"
-  class="ws-label"
+    :class="classNames"
+    :disabled="disabled"
+    :type="type"
+    :style="design"
+    class="ws-label"
   >
     <slot></slot>
   </label>
@@ -51,6 +41,23 @@
           }
         }
       },
+      computed: {
+        classNames(){
+          let type = this.type
+          let block = this.block
+          let disabled = this.disabled
+          return {
+            'ws-label-red':type === 'red',
+            'ws-label-yellow':type === 'yellow',
+            'ws-label-blue':type === 'blue',
+            'ws-label-green':type === 'green',
+            'ws-label-purple':type === 'purple',
+            'ws-label':type === 'customize',
+            'block': block,
+            'disabled':disabled
+          }
+        }
+      }
     }
 </script>
 

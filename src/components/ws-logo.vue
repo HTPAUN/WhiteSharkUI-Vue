@@ -2,7 +2,6 @@
   <svg class="icon" aria-hidden="true">
     <use xlink:href="#icon-shayu"></use>
   </svg>
-
 </template>
 
 <script>
