@@ -4,8 +4,9 @@
       <li @click="rate(star)"
           v-for="star in maxStars"
           :class="{'active':star <= stars}"
+          :key="star"
           class="star">
-        <svg class="icon" aria-hidden="true" v-bind="star" >
+        <svg class="icon" aria-hidden="true" :star="star" >
           <use :xlink:href="star <= stars? '#icon-star' :'#icon-x-star'"></use>
         </svg>
 
@@ -20,7 +21,7 @@
   import "@assets/icon/iconfont"
 
   export default {
-
+    name: 'ws-button-d-s-star',
     data(){
       return{
         stars:3,

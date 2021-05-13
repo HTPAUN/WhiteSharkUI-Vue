@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "ws-part"
+      name: "ws-part"
     }
 </script>
 

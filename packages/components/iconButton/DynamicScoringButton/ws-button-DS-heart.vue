@@ -2,50 +2,36 @@
   <div class="rating" style="display: inline-flex">
     <ul class="list">
       <li @click="rate(star)"
-          v-for="star in maxHeart"
+          v-for="star in maxStars"
           :class="{'active':star <= stars}"
+          :key="star"
           class="star">
-        <svg class="icon" aria-hidden="true" v-bind="star" >
-          <use :xlink:href="star<=stars? '#icon-heart' :'#icon-x-heart'"></use>
+        <svg class="icon" aria-hidden="true" :star="star" >
+          <use :xlink:href="star <= stars? '#icon-heart' :'#icon-x-heart'"></use>
         </svg>
 
       </li>
 
     </ul>
-    <span v-if="hasCounter">[静态]{{stars}} of {{maxHeart}}</span>
+    <span v-if="hasCounter">[动态]{{stars}} of {{maxStars}}</span>
   </div>
 </template>
 
 <script>
   import "@assets/icon/iconfont"
 
-
   export default {
-    props:{
-      grade:{
-        type:Number,
-        required:true
-      },
-      maxHeart:{
-        type: Number,
-        default:5
-      },
-      hasCounter:{
-        type:Boolean,
-        default: true
-      }
-    },
+    name: 'ws-button-d-s-heart',
     data(){
       return{
-        stars:this.grade
+        stars:3,
+        maxStars: 5,
+        hasCounter:true
       }
     },
     methods:{
       rate(star){
-        ifr(typeof star === 'number' && star <= this.maxHeart && star >=0)
-        {
-          this.stars = this.stars === star ? star - 1 : star
-        }
+        this.stars = this.stars === star ? star-1 : star;
       }
     }
   }
@@ -55,7 +41,7 @@
   @import "@assets/styles/mixin.scss";
   .rating {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    font-size: px2rem(20);
+    font-size: px2rem(10);
     color: #000000;
   }
   .list {
@@ -85,13 +71,8 @@
   #test:hover{
     background-color: orangered;
   }
-
   .icon{
     width: px2rem(100);
     height: px2rem(100);
-  }
-
-  .describe{
-    font-size: px2rem(60);
   }
 </style>

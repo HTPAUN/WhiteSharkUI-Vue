@@ -1,13 +1,13 @@
 <template>
   <button class="iconButton-heartCounter" @click="change">
     <div v-if="heart">
-      <svg class="icon" aria-hidden="true" v-bind="heart">
-        <use xlink:href="#icon-x-thumbsUp" ></use>
+      <svg class="icon" aria-hidden="true" :heart="heart">
+      <use xlink:href="#icon-x-heart" ></use>
       </svg>
     </div>
     <div v-else>
-      <svg class="icon" aria-hidden="true" v-bind="heart">
-        <use xlink:href="#icon-thumbsUp" ></use>
+      <svg class="icon" aria-hidden="true" :heart="heart">
+        <use xlink:href="#icon-heart" ></use>
       </svg>
     </div>
     <div class="num">{{ counter }}</div>
@@ -20,6 +20,7 @@
   import '@assets/icon/iconfont'
   import '@assets/icon/iconfont.css'
   export default {
+    name: 'ws-button-heart-counter',
     data() {
       return {
         heart:true,
@@ -43,7 +44,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "@assets/styles/mixin.scss";
+  @import "@assets/styles/mixin";
   .iconButton-heartCounter{
     width: px2rem(220);
     height: px2rem(100);
@@ -69,5 +70,3 @@
 
   }
 </style>
-
-

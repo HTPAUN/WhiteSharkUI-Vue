@@ -27,6 +27,10 @@
           type: String,
           default: ''
         },
+        disabled:{
+          type:Boolean,
+          default:false
+        },
         block: {
           type: Boolean,
           default: false
@@ -73,7 +77,7 @@
     padding-top: px2rem(10);
     font-size: px2rem(50);
     font-family: "Microsoft YaHei UI", serif;
-    text-space: 8px;
+    // text-space: 8px;
     font-weight: 600;
     border-radius: 5px;
     color: #295be6;

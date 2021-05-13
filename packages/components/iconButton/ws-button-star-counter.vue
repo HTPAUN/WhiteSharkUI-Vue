@@ -1,16 +1,16 @@
 <template>
-  <button class="iconButton-heartCounter" @click="change">
-    <div v-if="heart">
-      <svg class="icon" aria-hidden="true" v-bind="heart">
-      <use xlink:href="#icon-x-heart" ></use>
-      </svg>
+<button class="iconButton-starCounter" @click="change">
+    <div v-if="star">
+    <svg class="icon" aria-hidden="true" :star="star">
+      <use xlink:href="#icon-x-star" ></use>
+    </svg>
     </div>
-    <div v-else>
-      <svg class="icon" aria-hidden="true" v-bind="heart">
-        <use xlink:href="#icon-heart" ></use>
-      </svg>
-    </div>
-    <div class="num">{{ counter }}</div>
+  <div v-else>
+    <svg class="icon" aria-hidden="true" :star="star">
+      <use xlink:href="#icon-star" ></use>
+    </svg>
+  </div>
+  <div class="num">{{ counter }}</div>
 
   </button>
 
@@ -18,24 +18,24 @@
 
 <script>
   import '@assets/icon/iconfont'
-  import '@assets/icon/iconfont.css'
   export default {
+    name: 'ws-button-star-counter',
     data() {
       return {
-        heart:true,
+        star:true,
         counter:1234
       }
     },
     methods:{
       change:function () {
-        if(this.heart)
+        if(this.star)
         {
           this.counter++;
         }
         else {
           this.counter--;
         }
-        this.heart=!this.heart;
+        this.star=!this.star;
       }
     }
 
@@ -43,8 +43,8 @@
 </script>
 
 <style scoped lang="scss">
-  @import "@assets/styles/mixin";
-  .iconButton-heartCounter{
+@import "@assets/styles/mixin";
+  .iconButton-starCounter{
     width: px2rem(220);
     height: px2rem(100);
     border-radius: 20px;

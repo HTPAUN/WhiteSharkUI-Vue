@@ -4,33 +4,50 @@
       <li @click="rate(star)"
           v-for="star in maxStars"
           :class="{'active':star <= stars}"
+          :key="star"
           class="star">
-        <svg class="icon" aria-hidden="true" v-bind="star" >
-          <use :xlink:href="star <= stars? '#icon-heart' :'#icon-x-heart'"></use>
+        <svg class="icon" aria-hidden="true" :star="star" >
+          <use :xlink:href="star<=stars? '#icon-star' :'#icon-x-star'"></use>
         </svg>
 
       </li>
 
     </ul>
-    <span v-if="hasCounter">[动态]{{stars}} of {{maxStars}}</span>
+    <span v-if="hasCounter">[静态]{{stars}} of {{maxStars}}</span>
   </div>
 </template>
 
 <script>
   import "@assets/icon/iconfont"
 
-  export default {
 
+  export default {
+    name: 'ws-button-s-s-star',
+    props:{
+      grade:{
+        type:Number,
+        required:true
+      },
+      maxStars:{
+        type: Number,
+        default:5
+      },
+      hasCounter:{
+        type:Boolean,
+        default: true
+      }
+    },
     data(){
       return{
-        stars:3,
-        maxStars: 5,
-        hasCounter:true
+        stars:this.grade
       }
     },
     methods:{
       rate(star){
-        this.stars = this.stars === star ? star-1 : star;
+        ifr(typeof star === 'number' && star <= this.maxStars && star >=0)
+        {
+          this.stars = this.stars === star ? star - 1 : star
+        }
       }
     }
   }
@@ -40,7 +57,7 @@
   @import "@assets/styles/mixin.scss";
   .rating {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    font-size: px2rem(10);
+    font-size: px2rem(20);
     color: #000000;
   }
   .list {
@@ -70,8 +87,14 @@
   #test:hover{
     background-color: orangered;
   }
+
   .icon{
     width: px2rem(100);
     height: px2rem(100);
   }
+
+  .describe{
+    font-size: px2rem(60);
+  }
 </style>
+

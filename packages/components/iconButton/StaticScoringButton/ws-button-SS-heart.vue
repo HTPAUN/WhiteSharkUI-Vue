@@ -2,17 +2,18 @@
   <div class="rating" style="display: inline-flex">
     <ul class="list">
       <li @click="rate(star)"
-          v-for="star in maxStars"
+          v-for="star in maxHeart"
+          :key="star"
           :class="{'active':star <= stars}"
           class="star">
-        <svg class="icon" aria-hidden="true" v-bind="star" >
-          <use :xlink:href="star<=stars? '#icon-star' :'#icon-x-star'"></use>
+        <svg class="icon" aria-hidden="true" :star="star" >
+          <use :xlink:href="star<=stars? '#icon-heart' :'#icon-x-heart'"></use>
         </svg>
 
       </li>
 
     </ul>
-    <span v-if="hasCounter">[静态]{{stars}} of {{maxStars}}</span>
+    <span v-if="hasCounter">[静态]{{stars}} of {{maxHeart}}</span>
   </div>
 </template>
 
@@ -21,12 +22,13 @@
 
 
   export default {
+    name: 'ws-button-s-s-heart',
     props:{
       grade:{
         type:Number,
         required:true
       },
-      maxStars:{
+      maxHeart:{
         type: Number,
         default:5
       },
@@ -42,7 +44,7 @@
     },
     methods:{
       rate(star){
-        ifr(typeof star === 'number' && star <= this.maxStars && star >=0)
+        ifr(typeof star === 'number' && star <= this.maxHeart && star >=0)
         {
           this.stars = this.stars === star ? star - 1 : star
         }
@@ -95,4 +97,3 @@
     font-size: px2rem(60);
   }
 </style>
-

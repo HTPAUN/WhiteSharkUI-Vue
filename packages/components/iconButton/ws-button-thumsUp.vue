@@ -1,8 +1,8 @@
 <template>
 
-  <div class="iconButton-star" style="display: inline-flex">
-    <svg class="icon" aria-hidden="true" v-bind="star" @click="star=!star">
-      <use :xlink:href="star? '#icon-x-star' :'#icon-star'"></use>
+  <div class="iconButton-thumbsUp" style="display: inline-flex">
+    <svg class="icon" aria-hidden="true" :thumbsUp="thumbsUp" @click="thumbsUp=!thumbsUp">
+      <use :xlink:href="thumbsUp? '#icon-x-thumbsUp' :'#icon-thumbsUp'"></use>
     </svg>
   </div>
 
@@ -11,9 +11,10 @@
 <script>
   import '@assets/icon/iconfont'
   export default {
+    name: 'ws-button-thumbs-up',
     data(){
       return{
-        star:true
+        thumbsUp:true
       }
     }
 
@@ -21,7 +22,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "@assets/styles/mixin.scss";
+  @import "@assets/styles/mixin";
   .icon {
     width: px2rem(100);
     height: px2rem(100);
@@ -29,5 +30,4 @@
     fill: currentColor;
     overflow: hidden;
   }
-
 </style>

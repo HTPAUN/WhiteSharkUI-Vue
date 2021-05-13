@@ -1,22 +1,22 @@
 <template>
 
-  <div class="iconButton-thumbsUp" style="display: inline-flex">
-    <svg class="icon" aria-hidden="true" v-bind="thumbsUp" @click="thumbsUp=!thumbsUp">
-      <use :xlink:href="thumbsUp? '#icon-x-thumbsUp' :'#icon-thumbsUp'"></use>
-    </svg>
-  </div>
+   <div class="iconButton-heart" style="display: inline-flex">
+   <svg class="icon" aria-hidden="true" :heart="heart" @click="heart=!heart">
+     <use :xlink:href="heart? '#icon-heart' :'#icon-heartBroken'"></use>
+   </svg>
+   </div>
 
 </template>
 
 <script>
   import '@assets/icon/iconfont'
   export default {
-    data(){
-      return{
-        thumbsUp:true
+    name: 'ws-button-heart',
+    data() {
+      return {
+        heart: true
       }
     }
-
   }
 </script>
 

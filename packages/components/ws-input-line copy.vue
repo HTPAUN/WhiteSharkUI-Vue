@@ -1,8 +1,9 @@
-<template>
+<<template>
   <div :class="classNames">
     <input
       :disabled="disabled"
       :placeholder="placeholder"
+      :type="type"
       :value="value"
       @input="handleInput"
       class="ws-input-inner"
@@ -13,7 +14,7 @@
 
 <script>
   export default {
-    name: "ws-input",
+    name: "ws-input-line",
     props:{
       type:{
         type: String,
@@ -51,7 +52,7 @@
       }
     },
     computed: {
-      classNames() {
+      classNames(){
         let type = this.type
         return {
           'ws-input-red':type === 'red',
@@ -91,16 +92,15 @@
       outline: none;
       border: none;
       border-bottom: 1px solid #e8e8e8;
-      border-radius: 5px;
+      transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
       width: 100%;
 
       &:hover {
-        border-radius: 5px;
-        border: dashed  #EB4962;
+        border-bottom: dashed  #EB4962;
       }
       &:focus {
         color: #4e4e4e;
-        border: solid  #EB4962;
+        border-bottom: solid  #EB4962;
       }
       &::-webkit-input-placeholder {
         /* WebKit browsers */
@@ -138,15 +138,15 @@
       outline: none;
       border: none;
       border-bottom: 1px solid #e8e8e8;
-      border-radius: 5px;
+      transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
       width: 100%;
 
       &:hover {
-        border: dashed  #ffd700;
+        border-bottom: dashed  #ffd700;
       }
       &:focus {
         color: #4e4e4e;
-        border: solid  #ffd700;
+        border-bottom: solid  #ffd700;
       }
       &::-webkit-input-placeholder {
         /* WebKit browsers */
@@ -184,16 +184,15 @@
       outline: none;
       border: none;
       border-bottom: 1px solid #e8e8e8;
-      border-radius: 5px;
+      transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
       width: 100%;
 
       &:hover {
-        border-radius: 5px;
-        border: dashed  #69e924;
+        border-bottom: dashed  #69e924;
       }
       &:focus {
         color: #4e4e4e;
-        border: solid  #69e924;
+        border-bottom: solid  #69e924;
       }
       &::-webkit-input-placeholder {
         /* WebKit browsers */
@@ -231,16 +230,15 @@
       outline: none;
       border: none;
       border-bottom: 1px solid #e8e8e8;
-      border-radius: 5px;
+      transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
       width: 100%;
 
       &:hover {
-        border-radius: 5px;
-        border: dashed  #774ee0;
+        border-bottom: dashed  #774ee0;
       }
       &:focus {
         color: #4e4e4e;
-        border: solid  #774ee0;
+        border-bottom: solid  #774ee0;
       }
       &::-webkit-input-placeholder {
         /* WebKit browsers */
@@ -278,16 +276,15 @@
       outline: none;
       border: none;
       border-bottom: 1px solid #e8e8e8;
-      border-radius: 5px;
+      transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
       width: 100%;
 
       &:hover {
-        border-radius: 5px;
-        border: dashed  #12b2e6;
+        border-bottom: dashed  #12b2e6;
       }
       &:focus {
         color: #4e4e4e;
-        border: solid  #12b2e6;
+        border-bottom: solid  #12b2e6;
       }
       &::-webkit-input-placeholder {
         /* WebKit browsers */

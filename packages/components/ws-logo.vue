@@ -8,8 +8,8 @@
   import '@assets/icon/iconfont'
   import '@assets/icon/iconfont.css'
   export default {
-        name: "ws-logo"
-    }
+      name: "ws-logo"
+  }
 </script>
 
 <style scoped lang="scss">

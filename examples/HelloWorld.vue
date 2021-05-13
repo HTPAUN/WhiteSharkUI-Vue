@@ -27,7 +27,13 @@
         <ws-button type="yellow" style="margin: 30px">黄色</ws-button>
         <ws-button type="blue" style="margin: 30px">蓝色</ws-button>
         <ws-button type="purple" style="margin: 30px">紫色</ws-button>
-        <ws-code><ol><li v-for="basic in button.basic" style="list-style: none;margin-bottom: 10px">{{basic.code}}</li></ol></ws-code>
+        <ws-code>
+          <ol>
+            <li v-for="basic in button.basic" :key="basic.code" style="list-style: none;margin-bottom: 10px">
+              {{basic.code}}
+            </li>
+          </ol>
+        </ws-code>
 
 
         <p class="titleC">禁用模式</p>
@@ -37,7 +43,13 @@
         <ws-button disabled type="yellow" style="margin: 30px">黄色</ws-button>
         <ws-button disabled type="blue" style="margin: 30px">蓝色</ws-button>
         <ws-button disabled type="purple" style="margin: 30px">紫色</ws-button>
-        <ws-code><ol><li v-for="disabled in button.disabled" style="list-style: none;margin-bottom: 10px">{{disabled.code}}</li></ol></ws-code>
+        <ws-code>
+          <ol>
+            <li v-for="disabled in button.disabled" :key="disabled.code" style="list-style: none;margin-bottom: 10px">
+              {{disabled.code}}
+            </li>
+          </ol>
+        </ws-code>
 
 
 
@@ -50,13 +62,25 @@
           <ws-button block type="blue" style="margin-bottom: 30px">蓝色</ws-button>
           <ws-button block type="purple" style="margin-bottom: 30px">紫色</ws-button>
         </div>
-        <ws-code><ol><li v-for="block in button.block" style="list-style: none;margin-bottom: 10px">{{block.code}}</li></ol></ws-code>
+        <ws-code>
+          <ol>
+            <li v-for="block in button.block" :key="block.code" style="list-style: none;margin-bottom: 10px">
+              {{block.code}}
+            </li>
+          </ol>
+        </ws-code>
 
 
 
         <p class="titleC">自定义颜色按钮</p>
         <ws-button color="#000000" borderColor="#888888" >黑字灰线</ws-button>
-        <ws-code><ol><li v-for="customize in button.customize" style="list-style: none;margin-bottom: 10px">{{customize.code}}</li></ol></ws-code>
+        <ws-code>
+          <ol>
+            <li v-for="customize in button.customize" :key="customize.code" style="list-style: none;margin-bottom: 10px">
+              {{customize.code}}
+            </li>
+          </ol>
+        </ws-code>
 
 
 
@@ -78,7 +102,13 @@
           <ws-button-d-s-star style="margin: 30px"></ws-button-d-s-star>
           <ws-button-s-s-star style="margin: 5px" :grade="9" :maxStars="10" :hasCounter="true"></ws-button-s-s-star>
         </div>
-        <ws-code><ol><li v-for="icon in button.icon" style="list-style: none;margin-bottom: 10px">{{icon.code}}</li></ol></ws-code>
+        <ws-code>
+          <ol>
+            <li v-for="icon in button.icon" :key="icon.code" style="list-style: none;margin-bottom: 10px">
+              {{icon.code}}
+            </li>
+          </ol>
+        </ws-code>
 
 
 
@@ -90,19 +120,37 @@
         <p class="titleC">Line模式</p>
         <ws-input-line type="blue" style="display: inline-flex" v-model="type.line_input"></ws-input-line>
         <div style="margin: 30px">{{type.line_input}}</div>
-        <ws-code><ol><li v-for="line in input.line" style="list-style: none;margin-bottom: 10px">{{line.code}}</li></ol></ws-code>
+        <ws-code>
+          <ol>
+            <li v-for="line in input.line" :key="line.code" style="list-style: none;margin-bottom: 10px">
+              {{line.code}}
+            </li>
+          </ol>
+        </ws-code>
 
 
         <p class="titleC">Frame模式</p>
         <ws-input-frame type="yellow" style="display: inline-flex" v-model="type.frame_input"></ws-input-frame>
         <div style="margin: 30px" >{{type.frame_input}}</div>
-        <ws-code><ol><li v-for="frame in input.frame" style="list-style: none;margin-bottom: 10px">{{frame.code}}</li></ol></ws-code>
+        <ws-code>
+          <ol>
+            <li v-for="frame in input.frame" :key="frame.code" style="list-style: none;margin-bottom: 10px">
+              {{frame.code}}
+            </li>
+          </ol>
+        </ws-code>
 
 
         <p class="titleC">禁用模式</p>
         <ws-input-line disabled type="red" style="display: inline-flex;margin: 10px;"></ws-input-line>
         <ws-input-frame disabled type="red" style="display: inline-flex;margin: 10px;"></ws-input-frame>
-        <ws-code><ol><li v-for="disabled in input.disabled" style="list-style: none;margin-bottom: 10px">{{disabled.code}}</li></ol></ws-code>
+        <ws-code>
+          <ol>
+            <li v-for="disabled in input.disabled" :key="disabled.code" style="list-style: none;margin-bottom: 10px">
+              {{disabled.code}}
+            </li>
+          </ol>
+        </ws-code>
 
 
       </ws-part>
@@ -115,13 +163,25 @@
         <ws-label type="yellow">大白鲨UI</ws-label>
         <ws-label type="green">大白鲨UI</ws-label>
         <ws-label type="purple">大白鲨UI</ws-label>
-        <ws-code><ol><li v-for="normal in label.normal" style="list-style: none;margin-bottom: 10px">{{normal.code}}</li></ol></ws-code>
+        <ws-code>
+          <ol>
+            <li v-for="normal in label.normal" :key="normal.code" style="list-style: none;margin-bottom: 10px">
+              {{normal.code}}
+            </li>
+          </ol>
+        </ws-code>
 
 
         <p class="titleC">自定义模式</p>
         <ws-label background-color="#eeeeee" color="#4e4e4e">大白鲨UI</ws-label>
         <div style="transform: rotate(-5deg);margin: 30px"><ws-label background-color="#eeeeee" color="#4e4e4e">大白鲨UI</ws-label></div>
-        <ws-code><ol><li v-for="customize in label.customize" style="list-style: none;margin-bottom: 10px">{{customize.code}}</li></ol></ws-code>
+        <ws-code>
+          <ol>
+            <li v-for="customize in label.customize" :key="customize.code" style="list-style: none;margin-bottom: 10px">
+              {{customize.code}}
+            </li>
+          </ol>
+        </ws-code>
 
 
       </ws-part>
@@ -129,7 +189,6 @@
       <ws-part>
         <p class="titleC">大白鲨UI还会更新！！喜欢的朋友给个星！！！！</p>
         <ws-code><p class="detail">https://github.com/HTPAUN/WhiteSharkUI-Vue</p></ws-code>
-
       </ws-part>
     </div>
   </div>
@@ -137,47 +196,9 @@
 </template>
 
 <script>
-  import wsButtonThumbsUp from "@components/iconButton/ws-button-thumsUp"
-  import wsButtonStar from "@components/iconButton/ws-button-star"
-  import wsButtonHeart from "@components/iconButton/ws-button-heart"
-  import wsButtonStarCounter from "@components/iconButton/ws-button-star-counter"
-  import wsButtonHeartCounter from "@components/iconButton/ws-button-heart-counter"
-  import wsButtonThumbsUpCounter from "@components/iconButton/ws-button-thumbsUp-counter"
-  import wsButtonDSStar from "@components/iconButton/DynamicScoringButton/ws-button-DS-star"
-  import wsButtonDSHeart from "@components/iconButton/DynamicScoringButton/ws-button-DS-heart"
-  import wsButtonSSStar from "@components/iconButton/StaticScoringButton/ws-button-SS-star"
-  import wsButtonSSHeart from "@components/iconButton/StaticScoringButton/ws-button-SS-heart"
-  import wsButton from "@components/ws-button"
-  import wsInputLine from "@components/ws-input-line"
-  import wsInputFrame from "@components/ws-input-frame"
-  import wsLabel from "@components/ws-label"
-  import wsLogo from "@components/ws-logo"
-  import wsCode from "@components/ws-code"
-  import wsPart from "@components/ws-part"
 
 
-  import '@assets/font/font.css'
   export default {
-    components: {
-      wsInputLine,
-      wsInputFrame,
-      wsLabel,
-      wsLogo,
-      wsCode,
-      wsPart,
-      wsButtonThumbsUp,
-      wsButtonStar,
-      wsButtonStarCounter,
-      wsButtonHeartCounter,
-      wsButtonThumbsUpCounter,
-      wsButtonDSStar,
-      wsButtonDSHeart,
-      wsButton,
-      wsButtonSSStar,
-      wsButtonSSHeart,
-      wsButtonHeart
-
-    },
     data(){
       return {
         type: {
