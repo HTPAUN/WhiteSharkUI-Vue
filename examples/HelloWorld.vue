@@ -293,7 +293,6 @@
 </script>
 
 <style lang="scss">
-  @import "~@assets/font/font.css";
   @import "~@assets/styles/mixin";
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
