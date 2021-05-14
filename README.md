@@ -4,25 +4,26 @@
 
 🦈点击此处查看[demo](https://htpaun.github.io/WhiteSharkUI-Vue/)
 
-## Project setup
+### 安装项目依赖
+
 ```
-yarn install
+yarn
 ```
 
-### Compiles and hot-reloads for development
+### npm 发布
+
 ```
-yarn serve
+// 首先修改项目版本号
+// 然后:
+npm run lib
+npm publish
 ```
 
-### Compiles and minifies for production
+### github pages 更新
+
 ```
-yarn build
+sh deploy.sh
+// 或者
+npm run deploy
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

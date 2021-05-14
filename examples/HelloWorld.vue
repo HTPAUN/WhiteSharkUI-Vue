@@ -4,15 +4,27 @@
     <ws-logo></ws-logo>
     <div><p class="logo">------------------ 大白鲨UI ------------------</p></div>
     <div class="page">
-      <!-- <p class="titleA">开发指南</p>
+      <p class="titleA">开发指南</p>
       <ws-part>
         <p class="titleB">NPM安装</p>
-        <p class="detail">推荐使用npm的方式安装，它能更好地与Webpack打包工具一同配合使用。</p>
-        <ws-code>jiazhuangwoyijingnonghaolenpm</ws-code>
+        <p class="detail">推荐使用 npm 的方式安装，它能更好地与 Webpack 打包工具一同配合使用。</p>
+        <ws-code>
+          <ol>
+            <li v-for="item in npm" :key="item" style="list-style: none;margin-bottom: 10px">
+              {{item.code}}
+            </li>
+          </ol>
+        </ws-code>
         <p class="titleB">快速上手</p>
         <p class="detail">您可以在main.js中引入整个大白鲨UI。</p>
-        <ws-code><template><p class="detail">zhegeyemeiyouyanjiuhaozenmenong</p></template></ws-code>
-      </ws-part> -->
+        <ws-code>
+          <ol>
+            <li v-for="item in start" :key="item" style="list-style: none;margin-bottom: 10px">
+              {{item.code}}
+            </li>
+          </ol>
+        </ws-code>
+      </ws-part>
       <p class="titleA">组件介绍</p>
       <ws-part>
         <p class="titleB">按钮Button</p>
@@ -205,6 +217,14 @@
           line_input: '',
           frame_input: ''
         },
+        npm: [
+          {code: 'npm install whitesharkui'},
+        ],
+        start: [
+          {code: "import WhiteSharkUI from 'whitesharkui'"},
+          {code: "import 'whitesharkui/lib/whitesharkui.css'"},
+          {code: "Vue.use(WhiteSharkUI)"}
+        ],
         button:{
           basic:[
             {code:'<!-- 由type属性来选择颜色 -->'},

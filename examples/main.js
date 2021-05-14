@@ -3,7 +3,8 @@ import App from './App.vue'
 import router from './router'
 // import '@assets/icon/iconfont.css'
 // import '@assets/styles/mixin.scss'
-import WhiteSharkUI from '../packages'
+import WhiteSharkUI from 'whitesharkui'
+import 'whitesharkui/lib/whitesharkui.css'
 
 Vue.config.productionTip = false
 Vue.use(WhiteSharkUI)
