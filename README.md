@@ -2,7 +2,7 @@
 
 🦈 基于 Vue2 的可爱风 UI，适合用来写个人博客。（持续更新！！）
 
-🦈 点击此处查看[demo](https://htpaun.github.io/WhiteSharkUI-Vue/)
+🦈 点击此处查看 [demo](https://htpaun.github.io/WhiteSharkUI-Vue/)
 
 ### 安装项目依赖
 
